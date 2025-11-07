@@ -1,0 +1,459 @@
+@import '../_var'
+
+.banner
+    &.home-banner
+        &::before
+            background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.7) 100%)
+        .bg 
+            height: calc(100vh - var(--headerfixed))
+            @include media(1400)
+                height: 100vh
+            @include media(991)
+                height: calc(100vh - var(--headerfixed))
+            @include media(768)
+                height: 80vh
+            .banner-wrapper
+                width: 100%
+                top: 50%
+                translate: 0 -50%
+                @include media(768)
+                    top: 50%
+                    translate: 0 -50%
+                .container-fluid, .container
+                    @include media(1300)
+                        padding: 0 25px
+                    @include media(768)
+                        padding: 0 15px
+                    @include media(345)
+                        padding: 0 13px
+                    @include media(320)
+                        padding: 0 10px
+                    .content
+                        .subtag
+                            font-size: 36px
+                            line-height: 1.2
+                            max-width: 410px
+                        .text-slider
+                            height: 120px
+                            h2
+                                font-size: 100px
+                                line-height: 1
+                        .btn
+                            margin-top: 20px
+                        .patent_wrap
+                            margin-top: 60px
+                            align-items: center
+                            .flag-img
+                                padding-right: 20px
+                                border-right: 1px solid $white
+                                img
+                                    height: auto
+                            .info
+                                flex: 1
+                                padding-left: 20px
+                                p
+                                    font-size: 14px
+                                    line-height: 1.5
+                                    font-weight: 400
+                                    margin-top: 0
+                                h6
+                                    font-size: 18px
+                                    font-weight: 700
+                                    line-height: 1.2
+
+                            
+.home-secA
+    background: var(--gradient-a)
+    .heading
+        max-width: 520px 
+        margin: 0 auto
+        text-align: center
+        h2
+            color: var(--primary)
+            font-size: 48px
+        p
+            color: var(--colortext)
+        .btn_wrap
+            justify-content: center
+            margin-top: 30px
+    .disease_sec
+        position: relative
+        margin-top: 100px
+        .bacteria
+            position: absolute
+            width: 80px
+            height: 80px
+            transition: .5s ease
+            @keyframes scale
+                0%, 100%
+                    transform: scale(0.8)
+                50%
+                    transform: scale(1.5)
+            @keyframes scale2
+                0%, 100%
+                    transform: scale(1.5)
+                50%
+                    transform: scale(0.8)
+            &.bacteria1
+                top: 12%
+                left: 10%
+                animation: scale 3s ease infinite forwards
+            &.bacteria2
+                top: 0%
+                right: 2%
+                animation: scale2 3s ease infinite backwards
+            &.bacteria3
+                bottom: 10%
+                left: 16%
+                animation: scale2 3s ease infinite forwards
+            &.bacteria4
+                bottom: 20%
+                right: 10%
+                animation: scale 3s ease infinite backwards
+        .disease_wrap
+            align-items: center
+            .colA, .colB
+                flex: 1
+                width: 100%
+                max-width: 50%
+            .colA
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                gap: 20px
+                transform: translateX(50%)
+                .cirle_area
+                    width: 350px
+                    height: 350px
+                    position: relative
+                    border: 1px solid var(--primary)
+                    border-radius: 50%
+                    padding: 30px
+                    .circle_div
+                        line-height: 0
+                        img
+                            border-radius: 50%
+                    &.animation_active
+                        .disease
+                            animation-play-state: running
+                    .disease
+                        position: absolute
+                        color: $white
+                        font-size: 16px
+                        line-height: 1.5
+                        max-width: 91px
+                        text-align: right
+                        opacity: 0
+                        animation: fadeIn 0.6s forwards paused
+                        animation-delay: calc(var(--index) * .9s)
+                        @keyframes fadeIn
+                            0%
+                                opacity: 0
+                                transform: translateX(-10px)
+                            100%
+                                opacity: 1
+                                transform: translateX(0)
+                        &::before
+                            content: ""
+                            position: absolute
+                            width: 15px
+                            height: 15px
+                            background: var(--primary)
+                            border-radius: 50%
+                            top: 50%
+                        &:nth-child(2)
+                            bottom: 30%
+                            left: -30%
+                            #{--index}: 0
+                            &::before
+                                right: -32%
+                        &:nth-child(3)
+                            bottom: 55%
+                            left: -31%
+                            #{--index}: 1
+                            &::before
+                                right: -31%
+                        &:nth-child(4)
+                            top: 2%
+                            left: -17%
+                            #{--index}: 2
+                            &::before
+                                right: -44%
+                        &:nth-child(5)
+                            top: -11%
+                            left: 42%
+                            #{--index}: 3
+                            &::before
+                                top: 131%
+                                left: 35%
+                        &:nth-child(6)
+                            top: -3%
+                            right: -14%
+                            max-width: 100%
+                            #{--index}: 4
+                            &::before
+                                top: 81%
+                                left: -22%
+                        &:nth-child(7)
+                            max-width: 145px
+                            text-align: left
+                            top: 13%
+                            right: -40%
+                            #{--index}: 5
+                            &::before
+                                left: -24%
+                                top: 35%
+                        &:nth-child(8)
+                            max-width: 145px
+                            text-align: left
+                            top: 37%
+                            right: -31%
+                            #{--index}: 6
+                            &::before
+                                left: -48%
+                                top: 15%
+                        &:nth-child(9)
+                            text-align: left
+                            top: 52%
+                            right: -23%
+                            #{--index}: 7
+                            &::before
+                                left: -60%
+                                top: 15%
+                        &:nth-child(10)
+                            text-align: left
+                            top: 65%
+                            right: -29%
+                            #{--index}: 8
+                            &::before
+                                left: -30%
+                                top: 15%
+                            
+                h3
+                    font-size: 36px
+                    max-width: 320px
+                    text-align: center
+                    line-height: 1.1
+
+.home-secB
+    background: linear-gradient(90deg, #523D2E, #644F3C, #352C26)
+    .upper-sec
+        text-align: center
+        margin-bottom: 50px
+        @include media(991) 
+            margin-bottom: 40px
+        h2
+            margin-bottom: 20px
+        .tab-nav
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 40px
+            @include media(1280)
+                gap: 30px
+            @include media(991)
+                gap: 10px
+            @include media(768)
+                justify-content: start
+                overflow-x: auto
+            &::-webkit-scrollbar
+                height: 0
+                width: 0
+            &::-webkit-scrollbar-thumb
+               background:  var(--primary)
+            li
+                font-family: $Poppins
+                padding: 5px 20px
+                border-radius: 25px
+                color: $white
+                border: 1px solid transparent
+                transition: .5s ease
+                @include media(768)
+                    white-space: nowrap
+                @include media(540)
+                    padding: 3px 15px
+                    font-size: 14px
+                &.active 
+                    border-color: $primary
+    .lower-sec
+        .tabs
+            transform: translateY(10px)
+            &.active
+                transform: translateY(0)
+        .product-container
+            position: relative
+            .product-slider
+                max-width: 98%
+            .btn_wrap
+                text-align: center
+                .btn
+                    margin: 40px auto 0
+                    @include media(540)
+                        margin: 30px auto 0 
+
+.home-secC
+    background: $black
+    overflow-x: hidden
+    @include before-blur
+    &::before
+        left: 0
+        top: 30%
+        filter: blur(150px)
+        animation: moveblur 3s ease-in-out infinite forwards
+        @include media(540)     
+            top: 60%
+        @keyframes moveblur 
+            0%
+                transform: translateX(0)
+            50%
+                transform: translateX(100vw)
+            100%
+                transform: translateX(0)
+    .about_wrap
+        height: 70vh
+        align-items: center
+        justify-content: space-between
+        --gap: 40px
+        gap: var(--gap)
+        @include media(991) 
+            --gap: 30px
+        @include media(768)
+            height: 100%
+            flex-direction: column
+            --gap: 50px
+        .colA
+            flex: 0 1 40%
+            max-width: 40%
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            @include before-blur
+            &::before
+                left: 74%
+                top: 0
+            figure
+                width: 350px
+                animation: scalevector 7s ease infinite forwards
+                @include media(991) 
+                    width: 300px
+                @keyframes scalevector 
+                    0%
+                        transform: scale(0.1)
+                    16%
+                        transform: scale(0.3)
+                    32%
+                        transform: scale(0.6)
+                    48%
+                        transform: scale(1) rotate(90deg)
+                    68%
+                        transform: rotate(180deg)
+                    88%
+                        transform: rotate(360deg)
+                    100%
+                        transform: scale(0.1)
+        .colB
+            flex: calc(60% - var(--gap))
+            max-width: calc(60% - var(--gap))
+            width: 100%
+            @include media(768)
+                flex: 1
+                max-width: 100%
+            @include media(540)
+                text-align: center
+            .heading
+                .subhead
+                    margin-top: 0
+                    font-size: 20px
+                    color: $white
+                    @include media(540)
+                        font-size: 18px
+                        line-height: 1.2
+                        max-width: 300px
+                        margin: 10px auto
+            .content
+                padding: 20px 0 30px
+                max-width: 560px
+                @include media(540)
+                    padding: 15px 0 25px
+                p
+                    color: var(--colortext)
+                    @include media(540)
+                        text-align: justify
+                        word-spacing: -0.2em
+            .btn
+                @include media(540)
+                    margin: 0 auto
+
+.home-secD
+    position: sticky
+    top: var(--headerfixed)
+    .banner
+        &::before
+            background: #00000021
+        .bg
+            height: calc( 100vh - var(--headerfixed) )
+            @include media(768)
+                height: 80vh
+            @include media(540)
+                height: 50vh 
+
+.home-secE
+    background: $white
+    position: relative
+    .upper-sec
+        text-align: center
+        h2
+            text-transform: capitalize
+            font-family: $Optima
+            @include media(540)
+                font-size: 28px
+        .swiper-nav
+            gap: 20px
+
+.home-secF
+    position: relative 
+    background: $white
+    .heading
+        margin-bottom: 5rem
+        text-align: center
+        @include media(991) 
+            margin-bottom: 4rem
+        @include media(768)
+            margin-bottom: 3.5rem
+        @include media(540)
+            margin-bottom: 2.5rem
+        h2
+            margin-bottom: 5px
+        p
+            color: var(--text)
+            max-width: 460px
+            margin: 0 auto 
+    .brands_sec
+        .swiper-wrapper
+            align-items: center
+            transition-timing-function: linear !important
+            figure
+                width: 140px
+                @include media(768)
+                    width: 100px
+                @include media(540)
+                    width: 70px
+                img
+                    object-fit: contain
+
+.thankyou-banner
+    .bg 
+        height: 100vh
+    .banner-wrapper
+        top: 70%
+        translate: 0 -70%
+        .content
+            max-width: 875px
+            text-align: center
+            margin: 0 auto
+            p
+                font-size: 18px
+            .btn
+                margin: 20px auto 0
