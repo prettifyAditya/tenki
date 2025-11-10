@@ -524,10 +524,9 @@ $(function () {
         },
     });
 
-    new Swiper('.brand_slider', {
+    new Swiper('.patents_slider', {
         loop: true,
         speed: 3000,
-        direction: 'horizontal',
         autoplay: {
             delay: 0,
             disableOnInteraction: false,
@@ -535,36 +534,39 @@ $(function () {
         },
         breakpoints: {
             0: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            675: {
                 slidesPerView: 4,
                 spaceBetween: 20,
             },
-            991: {
+            675: {
                 slidesPerView: 5,
+                spaceBetween: 20,
+            },
+            991: {
+                slidesPerView: 6,
                 spaceBetween: 20,
             }
         },
     });
 
-    new Swiper('.project-gallery-swiper', {
-        loop: true,
-        speed: 1500,
-        navigation: {
-            prevEl: ".project-gallery-prev",
-            nextEl: ".project-gallery-next",
+    new Swiper('.property-slider', {
+        loop: false,
+        speed: 1000,
+        grid:{
+            rows: 2,
+            fill: "row",
         },
-        centeredSlides: true,
+        navigation: {
+            prevEl: ".property-prev",
+            nextEl: ".property-next",
+        },
         breakpoints: {
             0: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 10,
             },
             675: {
-                slidesPerView: 1.3,
-                spaceBetween: 20,
+                slidesPerView: 2,
+                spaceBetween: 15,
             }
         },
     })

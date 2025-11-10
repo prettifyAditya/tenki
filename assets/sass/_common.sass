@@ -441,6 +441,18 @@ img
         &:hover
             background: $white
             color: $black
+    &.border-primary
+        background: transparent
+        border: 1px solid $primary
+        color: $primary
+        &:hover
+            background: $primary
+            color: $white
+    &.solid-border
+        border: 1px solid $primary
+        &:hover
+            background: transparent
+            color: $primary
     &.w-100
         width: 100%
     
@@ -1044,3 +1056,55 @@ em
     display: flex
     align-items: center
     gap: 15px
+
+.product_col
+    width: 100% 
+    height: 100%
+    border: 1px solid #E0E0E0
+    border-radius: 10px
+    &:hover
+        figure
+            img
+                transform: scale(1.2)
+    figure
+        display: block
+        line-height: 0
+        @include shine()
+        border-top-left-radius: 10px
+        border-top-right-radius: 10px
+        overflow: hidden
+        img
+            border-top-left-radius: 10px
+            border-top-right-radius: 10px
+            transition: .5s ease
+    figcaption
+        padding: 20px 20px 25px
+        .proname
+            color: $black
+            font-weight: 600
+            font-size: 20px
+        .prodesc
+            margin: 5px 0 10px
+            color: $text
+            font-size: 14px
+            height: 63px
+            @include line-clamp($line: 3)
+        .price_wrap
+            display: flex
+            align-items: center
+            gap: 20px
+            .sp
+                font-size: 20px
+                font-weight: 600
+            .mrp
+                font-weight: 300
+                font-size: 16px
+                text-decoration: line-through
+            .tax
+                margin-left: auto
+                font-size: 13px
+        .btn_wrap
+            margin-top: 15px
+            .btn
+                flex: 1
+                max-width: 100%
