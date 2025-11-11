@@ -204,7 +204,7 @@
   animation: scale 3s ease infinite forwards;
 }
 .home-secA .disease_sec .bacteria.bacteria2 {
-  top: 0%;
+  top: 4%;
   right: 2%;
   animation: scale2 3s ease infinite backwards;
 }
@@ -392,9 +392,9 @@
 }
 .home-secB .bg .banner-wrapper.heading {
   text-align: center;
-  top: 40%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  translate: -50% -20%;
 }
 .home-secB .bg .banner-wrapper.heading h6 {
   font-size: 36px;
@@ -508,7 +508,7 @@
   position: absolute;
   left: 50%;
   top: -47%;
-  transform: translate(-50%, -47%);
+  translate: -50% -47%;
   z-index: 2;
 }
 .home-secC .flex .colC {
