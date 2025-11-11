@@ -422,6 +422,7 @@
   bottom: 10%;
   translate: 0 10%;
   width: 100%;
+  overflow-x: hidden;
 }
 .home-secB .bg .banner-wrapper.content > .flex {
   justify-content: space-between;
@@ -549,6 +550,7 @@
 .home-secD {
   background: var(--gradient-a);
   padding: 80px 0;
+  overflow-x: hidden;
 }
 .home-secD .flex {
   --gap: 80px;

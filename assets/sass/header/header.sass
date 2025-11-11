@@ -985,21 +985,10 @@ footer
 .model.ham-pop
     right: 0
     max-width: 480px
+    background: linear-gradient(0deg, var(--primary) -20%, white 56%)
     transform: translateX(100%)
     transition: .5s ease
     z-index: 10
-    &::before
-        content: ""
-        position: absolute
-        left: 0
-        bottom: 0
-        width: 100%
-        height: 100%
-        background: url(../../images/logo.svg) no-repeat $white
-        background-position: 190% 110%
-        opacity: 0.1
-        @include media(540)
-            background-size: 80%
     &.is-open
         transform: translateX(0%)
     .close
@@ -1027,17 +1016,11 @@ footer
             padding: 0 20px 20px
             margin-top: 40px
         .icon
-            margin-bottom: 30px
             line-height: 0
+            margin-bottom: 20px
             img,svg
                 width: 100px
-                height: 100px
-                animation: rotateicon 20s ease infinite forwards
-                @keyframes rotateicon
-                    0%
-                        transform: rotate(0)
-                    100%
-                        transform: rotate(360deg)
+                height: auto
         .nav-list
             width: 100%
             >li
@@ -1049,51 +1032,6 @@ footer
                         transition: .5s ease
                         @include media(540)
                             transform: translateX(0px)
-                &.desktop-non
-                    display: none
-                &.hasDropdown
-                    position: relative
-                    cursor: pointer
-                    &:hover
-                        .title
-                            h5
-                                color: $primary
-                    .title
-                        display: flex
-                        justify-content: space-between
-                        align-items: center
-                        &.active
-                            h5 
-                                color: var(--primary)
-                            svg
-                                transform: rotate(90deg)
-                        h5
-                            font-size: 22px
-                            color: #000
-                            font-family: $Optima
-                            transition: .3s ease
-                        .arrow
-                            width: 30px
-                            transition: .5s ease
-                        svg
-                            transition: .5s ease
-                            width: 16px
-                    .dropdown-menu-ham
-                        display: none
-                        padding-top: 15px
-                        ul
-                            border-top: 1px solid #dadada   
-                            border-bottom: 1px solid #dadada   
-                            padding: 10px
-                            li
-                                a
-                                    display: block
-                                    font-size: 16px
-                                    color: #666
-                                    padding: 3px 0
-                                    transition: .5s ease
-                                    &:hover
-                                        color: $primary
                 >a
                     display: block
                     font-size: 22px
@@ -1109,8 +1047,14 @@ footer
             padding-top: 1rem
             display: flex
             align-items: center 
+            justify-content: space-between
             gap: 1rem
             border-top: 1px solid #dadada   
+            .call
+                color: $black
+                &:hover
+                    transform: translateX(5px)
+                    color: $primary
             .social-icons
                 a
                     display: inline-flex
