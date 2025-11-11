@@ -17,102 +17,6 @@ $(function () {
         $('html, body').animate({ scrollTop: 0 }, 1000);
     });
 
-    // Header Dropdown
-
-    $searchWrap = $('.search_wrap')
-    $searchInput = $('.search_input')
-    $searchDropdown = $('.search_dropdown_menu')
-    $searchBtn = $('.search_btn')
-    $searchOpenImg = $('.search-open-img')
-    $searchCloseImg = $('.search-close-img')
-    $searchedProducts = $('.searched_pro');
-    
-    $searchInput.on('input', function () {
-        const inputVal = $(this).val().toLowerCase().trim();
-
-        if (inputVal !== '') {
-            $searchDropdown.slideDown();
-            $searchDropdown.addClass('is-open');
-
-            let matchFound = false;
-
-            $searchedProducts.each(function () {
-                const name = $(this).find('.pro_name').text().toLowerCase();
-                if (name.includes(inputVal)) {
-                    $(this).show();
-                    matchFound = true;
-                } else {
-                    $(this).hide();
-                }
-            });
-
-            if (matchFound) {
-                $('.product-not-found').hide();
-            } else {
-                $('.product-not-found').show();
-            }
-
-            if(window.matchMedia("(min-width: 992px)").matches){
-                $searchOpenImg.hide();
-                $searchCloseImg.show();
-                $searchBtn.addClass('close-search-btn');
-            }
-        } else {
-            $searchedProducts.show();
-            $('.no-results').hide();
-            $searchDropdown.stop(true, true).slideUp(200).removeClass('is-open');
-            if(window.matchMedia("(min-width: 992px)").matches){
-                $searchOpenImg.show();
-                $searchCloseImg.hide();
-                $searchBtn.removeClass('close-search-btn');
-            }
-        }
-    });
-    if(window.matchMedia("(max-width: 991px)").matches){
-        $searchOpenImg.hide();
-        $searchCloseImg.show();
-        $searchBtn.addClass('close-search-btn');
-    }
-
-    $('body').click(function (e) {
-        if (!$(e.target).closest('.search_wrap').length) {
-            $searchDropdown.stop().slideUp();
-        }
-    });
-    $searchInput.on('click', function(){
-        $searchWrap.addClass('search_wrap_active')
-    })
-    $searchInput.on('blur', function(){
-        if($(this).val() == ''){
-            $searchWrap.removeClass('search_wrap_active')
-        }
-    })
-    $(document).on('click', '.close-search-btn', function(){
-        $searchInput.val('');
-        $searchDropdown.stop().slideUp();
-        $searchDropdown.removeClass('is-open');
-        $searchWrap.removeClass('search_wrap_active')
-        if(window.matchMedia("(min-width: 992px)").matches){ 
-            $searchCloseImg.hide();
-            $searchOpenImg.show();
-            $searchBtn.removeClass('close-search-btn');
-        }
-        if(window.matchMedia("(max-width: 992px)").matches){ 
-            $('.search_wrapper').removeClass('open')
-        }
-    })
-
-    if(window.matchMedia("(max-width: 992px)").matches){
-        $('.mobSearch').click(function(){
-            $('.search_wrapper').addClass('open')
-            $searchInput.focus()
-        })
-    }
-    $('body').click(function (e) {
-        if (!$(e.target).closest('.mobSearch').length && !$(e.target).closest('.search_wrapper').length) {
-            $('.search_wrapper').removeClass('open')
-        }
-    });
     //
 
     const labelInput = $("input, textarea");
@@ -149,18 +53,6 @@ $(function () {
         $(slide).stop().slideToggle();
         // window.scrollBy({ top: 100, behavior: 'smooth' });
     })
-    
-    //Code for Multiple Menus
-    // $('.plu-ico').click(function () {
-    //     var parentLi = $(this).closest('.hasDropdown');
-    //     var slideMenu = parentLi.find('.dropdown-menu-ham');
-        
-    //     $('.dropdown-menu-ham').not(slideMenu).slideUp();
-    //     $('.plu-ico').not(this).removeClass('active');
-    
-    //     $(this).toggleClass('active');
-    //     slideMenu.stop().slideToggle();
-    // });
 
     $('.title').click(function () {
         var parentLi = $(this).closest('.hasDropdown');
@@ -501,29 +393,6 @@ $(function () {
         direction:"vertical"
     });
 
-    new Swiper('.related-products-slider', {
-        loop: false,
-        speed: 1500,
-        navigation: {
-            prevEl: '.related-projects-prev',
-            nextEl: '.related-projects-next',
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1.5,
-                spaceBetween: 10,
-            },
-            675: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-            },
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 15,
-            }
-        },
-    });
-
     new Swiper('.patents_slider', {
         loop: true,
         speed: 3000,
@@ -570,60 +439,6 @@ $(function () {
             }
         },
     })
-
-    new Swiper('.header-brand-slider', {
-        loop: true,
-        speed: 3000,
-        direction: 'horizontal',
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            675: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            991: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-            }
-        },
-    });
-
-    $('.header-slider').each(function (index, element) {
-        var swiperClass = 'header-slider-' + index;
-        var paginationClass = 'header-dots-' + index;
-
-        $(element).addClass(swiperClass);
-        $(element)
-            .closest('.header-slider-wrapper')
-            .find('.header-dots')
-            .addClass(paginationClass);
-        new Swiper('.' + swiperClass, {
-            loop: true,
-            speed: 1000,
-            pagination: {
-                el: '.' + paginationClass,
-                clickable: true,
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                },
-                675: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                },
-            },
-        });
-    });
 
     });
 
